@@ -1,0 +1,228 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Editorial Markdown Prose Styling */
+.folio-prose {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #262626;
+}
+
+.dark .folio-prose {
+  color: #e5e5e5;
+  letter-spacing: 0.005em;
+}
+
+.folio-prose > p {
+  margin-top: 1.35em;
+  margin-bottom: 1.35em;
+}
+
+.folio-prose--dropcap > p:first-of-type::first-letter {
+  font-family: var(--font-serif);
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.85;
+  font-weight: 600;
+  padding-top: 0.25rem;
+  padding-right: 0.65rem;
+  color: #0a0a0a;
+}
+
+.dark .folio-prose--dropcap > p:first-of-type::first-letter {
+  color: #ffffff;
+}
+
+.folio-prose h1,
+.folio-prose h2,
+.folio-prose h3,
+.folio-prose h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: #0a0a0a;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.dark .folio-prose h1,
+.dark .folio-prose h2,
+.dark .folio-prose h3,
+.dark .folio-prose h4 {
+  color: #fafafa;
+}
+
+.folio-prose h1 {
+  font-size: 2rem;
+}
+
+.folio-prose h2 {
+  font-size: 1.625rem;
+}
+
+.folio-prose h3 {
+  font-size: 1.25rem;
+}
+
+.folio-prose a {
+  color: #0a0a0a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.dark .folio-prose a {
+  color: #ffffff;
+}
+
+.folio-prose strong {
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.dark .folio-prose strong {
+  color: #ffffff;
+}
+
+/* Pull-quote styling with top/bottom hairline rules (no thick left border) */
+.folio-prose blockquote {
+  margin: 2rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #171717;
+}
+
+.dark .folio-prose blockquote {
+  border-top-color: #262626;
+  border-bottom-color: #262626;
+  color: #f5f5f5;
+}
+
+.folio-prose blockquote p {
+  margin: 0;
+}
+
+.folio-prose ul,
+.folio-prose ol {
+  margin: 1.25em 0;
+  padding-left: 1.5rem;
+}
+
+.folio-prose ul {
+  list-style-type: disc;
+}
+
+.folio-prose ol {
+  list-style-type: decimal;
+}
+
+.folio-prose li {
+  margin-top: 0.45em;
+  margin-bottom: 0.45em;
+}
+
+.folio-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  background-color: #f5f5f5;
+  color: #171717;
+}
+
+.dark .folio-prose code {
+  background-color: #1f1f1f;
+  color: #e5e5e5;
+}
+
+.folio-prose pre {
+  margin: 1.5em 0;
+  padding: 1.125rem 1.25rem;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+  border: 1px solid #e5e5e5;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.65;
+}
+
+.dark .folio-prose pre {
+  background-color: #121212;
+  border-color: #262626;
+}
+
+.folio-prose pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+
+.folio-prose hr {
+  margin: 2.5rem auto;
+  width: 4rem;
+  border: none;
+  border-top: 1px solid #d4d4d4;
+}
+
+.dark .folio-prose hr {
+  border-top-color: #404040;
+}
+
+.folio-prose table {
+  width: 100%;
+  margin: 1.75em 0;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.folio-prose th,
+.folio-prose td {
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dark .folio-prose th,
+.dark .folio-prose td {
+  border-bottom-color: #262626;
+}
+
+.folio-prose th {
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.dark .folio-prose th {
+  color: #ffffff;
+}
+
+.folio-prose img {
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
